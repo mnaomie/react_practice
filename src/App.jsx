@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { User } from './Avatar'
 import axios from 'axios'
+import Example from './img/components/Card'
 
 
 function App() {
@@ -44,15 +45,14 @@ function App() {
         <h1>Users List</h1>
         {users && users.map(user => {
           return (
-            <>
-              <h3>My name is {user.name}</h3>
-              <p>Email : {user.email}</p>
-            </>
+            <Example/>
           )
         })}
       </div>
     </>
   )
+
+  
   
 }
 
