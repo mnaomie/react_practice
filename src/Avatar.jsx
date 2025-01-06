@@ -1,8 +1,8 @@
-export function User(props) {
+export function User({firstName, lastName, image}) {
     return (
         <div>
-            <img src={props.img} alt="" />
-            <h3>I am {props.firstName} {props.lastName}</h3>
+            <img src={image}/>
+            <h3>I am {firstName} {lastName}</h3>
         </div>
     )
 }
