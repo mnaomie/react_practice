@@ -8,7 +8,8 @@ import { User } from './Avatar'
 const App = () => {
   return (
     <div>
-      <User />
+      <User firstName="Homer" lastName="Simpson" img="vite.svg"/>
+      <User firstName="Bart" lastName="Simpson" img="vite.svg"/>
     </div>
     
   )
