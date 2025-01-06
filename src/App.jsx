@@ -9,7 +9,9 @@ import axios from 'axios'
 function App() {
 
   const [users, setUsers] = useState(null);
-  const URL = 'https://jsonplaceholder.typicode.com/users';
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(null);
+  const URL = import.meta.env.VITE_URL;
   console.log(URL);
   
 
@@ -18,13 +20,24 @@ function App() {
       const response = await axios.get(URL)
       setUsers(response.data)
     } catch (err) {
-      console.error(err);
+      setError(err.message);
       
+    } finally {
+      setLoading(false)
     }
   }
   useEffect(() => {
     fetchUsers()
   }, [])
+
+  if(loading) {
+    return <p>...loading</p>
+  }
+
+  if(error) {
+    return <p>{error}</p>
+  }
+
   return (
     <>
       <div>
