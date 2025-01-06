@@ -10,6 +10,8 @@ function App() {
 
   const [users, setUsers] = useState(null);
   const URL = 'https://jsonplaceholder.typicode.com/users';
+  console.log(URL);
+  
 
   const fetchUsers = async () => {
     try {
@@ -19,11 +21,10 @@ function App() {
       console.error(err);
       
     }
-
-    useEffect(() => {
-      fetchUsers()
-    }, [])
   }
+  useEffect(() => {
+    fetchUsers()
+  }, [])
   return (
     <>
       <div>
